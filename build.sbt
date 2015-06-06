@@ -4,6 +4,12 @@ version := "1.0"
 
 scalaVersion := "2.11.6"
 
+enablePlugins(JavaAppPackaging)
+
+packageDescription in Debian := "Voodoo"
+
+maintainer in Debian := "Krishna"
+
 libraryDependencies += "io.undertow" % "undertow-core" % "1.2.6.Final"
 
 libraryDependencies += "io.undertow" % "undertow-servlet" % "1.2.6.Final"
