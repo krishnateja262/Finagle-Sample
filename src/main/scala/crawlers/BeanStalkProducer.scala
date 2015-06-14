@@ -8,14 +8,14 @@ import com.surftools.BeanstalkClientImpl.ClientImpl
 class BeanStalkProducer(port:Int,host:String) {
 
   def pushMessage(message:String,tube:String)={
-    val flipBeanStalk = new ClientImpl("localhost",14711)
+    val flipBeanStalk = new ClientImpl(host,port)
     flipBeanStalk.useTube(tube)
     flipBeanStalk.put(1,0,5,message.getBytes)
     flipBeanStalk.close()
   }
 
   def pushMessages(messages:Array[String],tube:String)={
-    val flipBeanStalk = new ClientImpl("localhost",14711)
+    val flipBeanStalk = new ClientImpl(host,port)
     flipBeanStalk.useTube(tube)
     val status = messages.map(message => flipBeanStalk.put(1,0,5,message.getBytes))
     flipBeanStalk.close()

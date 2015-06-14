@@ -30,4 +30,4 @@ libraryDependencies += "org.jsoup" % "jsoup" % "1.8.2"
 
 libraryDependencies += "com.google.code.gson" % "gson" % "2.3.1"
 
-libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.3.11"
+libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.0.2"
