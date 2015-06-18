@@ -2,7 +2,7 @@ import com.google.gson.Gson
 import com.voodoo.server.services.impl.SearchServiceImpl
 import io.undertow.server.{HttpHandler, HttpServerExchange}
 import io.undertow.{Handlers, Undertow}
-import services.impl.{SnapdealMessageProducer, FlipkartMessageProducer}
+import services.impl.{MyntraMessageProducer, SnapdealMessageProducer, FlipkartMessageProducer}
 import services.{AsyncProductClient, MessageProducer}
 
 /**
@@ -61,6 +61,10 @@ object Server extends App{
         }
         case "snapdeal" => {
           val messageProducer:MessageProducer = new SnapdealMessageProducer
+          messageProducer.generateMessages()
+        }
+        case "myntra" => {
+          val messageProducer:MessageProducer = new MyntraMessageProducer
           messageProducer.generateMessages()
         }
       }

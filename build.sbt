@@ -31,3 +31,5 @@ libraryDependencies += "org.jsoup" % "jsoup" % "1.8.2"
 libraryDependencies += "com.google.code.gson" % "gson" % "2.3.1"
 
 libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.0.2"
+
+libraryDependencies += "commons-io" % "commons-io" % "2.4"
