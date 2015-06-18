@@ -10,7 +10,7 @@ import services.{AsyncProductClient, MessageProducer}
  */
 object Server extends App{
 
-  val server: Undertow = Undertow.builder().addHttpListener(8080, "localhost")
+  val server: Undertow = Undertow.builder().addHttpListener(8080, "0.0.0.0")
     .setHandler(Handlers.path().addPrefixPath("/api/products", new JsonHandler).addPrefixPath("/queue", new BeanStalkHandler))
     .setWorkerThreads(200).build()
 
